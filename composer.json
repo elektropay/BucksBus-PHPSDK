@@ -1,0 +1,22 @@
+{
+  "name": "vendor/bucksbus-sdk",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Tigran.Darbinyan",
+      "email": "tigran.darbinyan@ifcmarkets.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "ext-json": "*",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bucksbus\\": "src/Bucksbus/"
+    }
+  }
+}

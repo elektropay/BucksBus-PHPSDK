@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bucksbus Payment Example</title>
+    <style>
+        body {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Make a Payment</h1>
+    <form action="process_payment.php" method="POST">
+        <fieldset>
+            <legend>Amount Info</legend>
+            <div>
+                <label for="payment_type">Payment Type:</label>
+                <select id="payment_type" name="payment_type" required>
+                    <option value="FIXED_AMOUNT">FIXED_AMOUNT</option>
+                    <option value="OPEN_AMOUNT">OPEN_AMOUNT</option>
+                </select>
+            </div>
+            <div>
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" required>
+            </div>
+            <div>
+                <label for="asset_id">Amount Currency (it may be the same as Crypto currency or some fiat currency) </label>
+                <select id="asset_id" name="asset_id" required>
+                    <option value="">Select</option>
+                    <option value="BTC">Bitcoin (BTC)</option>
+                    <option value="TRX">Tron (TRX)</option>
+                    <option value="ETH">Ethereum (ETH)</option>
+                    <option value="USDT.ERC20">Tether (USDT.ERC20)</option>
+                    <option value="USDT.TRC20">Tether (USDT.TRC20)</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+            </div>
+            <div>
+                <label for="payment_asset_id">Crypto Currency of the Payment </label>
+                <select id="payment_asset_id" name="payment_asset_id" required>
+                    <option value="BTC">Bitcoin (BTC)</option>
+                    <option value="TRX">Tron (TRX)</option>
+                    <option value="ETH">Ethereum (ETH)</option>
+                    <option value="USDT.ERC20">Tether (USDT.ERC20)</option>
+                    <option value="USDT.TRC20">Tether (USDT.TRC20)</option>
+                </select>
+            </div>
+        </fieldset>
+        <br/><br/>
+        <fieldset>
+            <legend>Payer Information</legend>
+            <div>
+                <label for="payer_email">Payer’s Email:</label>
+                <input type="text" id="payer_email" name="payer_email" placeholder="test@example.com" value="test@example.com" required>
+            </div>
+            <div>
+                <label for="payer_name">Payer’s Name:</label>
+                <input type="text" id="payer_name" name="payer_name" placeholder="Payer Name" value="Payer Name" required>
+            </div>
+            <div>
+                <label for="payer_lang">Interface Language:</label>
+                <select id="payer_lang" name="payer_lang" required>
+                    <option value="en">English</option>
+                    <option value="ar">Arab</option>
+                    <option value="es">Spanish</option>
+                    <option value="fa">Farsi</option>
+                    <option value="fr">French</option>
+                    <option value="ja">Japanese</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="ru">Russian</option>
+                    <option value="tr">Turkish</option>
+                    <option value="zh">Chinese</option>
+                </select>
+            </div>
+        </fieldset>
+        <br/><br/>
+        <fieldset>
+            <legend>Merchant Payment Details</legend>
+            <div>
+                <label for="description">Payment Description</label>
+                <input type="text" id="description" name="description" value="Payment Description Sample" required>
+            </div>
+            <div>
+                <label for="timeout">Payment Waiting Time (in minutes). (between 0 and 1440 minutes)</label>
+                <input type="text" id="timeout" name="timeout" value="120">
+            </div>
+        </fieldset>
+        <br/><br/>
+        <fieldset>
+            <legend>Custom Values (you can use 9 custom fields custom1 - custom9)</legend>
+            <div>
+                <label for="custom1">Custom 1 (you can use it to store your inner orderId)</label>
+                <input type="text" id="custom1" name="custom1" value="BP123456">
+            </div>
+            <div>
+                <label for="custom2">Custom 2</label>
+                <input type="text" id="custom2" name="custom2">
+            </div>
+        </fieldset>
+        <br/><br/>
+        <button type="submit">Pay Now</button>
+    </form>
+</body>
+</html>

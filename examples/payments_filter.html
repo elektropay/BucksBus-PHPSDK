@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Payments</title>
+
+    <style>
+        body {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+<h1>Filter Payments</h1>
+<form action="process_payments_filter.php" method="POST">
+    <table>
+        <tr>
+            <td>
+                <label for="from">From Date (Format YYYY-MM-DD):</label>
+                <input type="date" id="from" name="from" value="2024-09-01">
+            </td>
+            <td>
+                <label for="to">To Date (Format YYYY-MM-DD):</label>
+                <input type="date" id="to" name="to" value="2024-10-01">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="">All</option>
+                    <option value="OPEN">Open</option>
+                    <option value="COMPLETE">Completed</option>
+                    <option value="CANCEL">Cancelled</option>
+                    <option value="CLOSING">Closing Process</option>
+                    <!-- Add more statuses as needed -->
+                </select>
+            </td>
+            <td>
+                <label for="asset_id">Crypto Currency:</label>
+                <select id="asset_id" name="asset_id">
+                    <option value="">All</option>
+                    <option value="BTC">Bitcoin (BTC)</option>
+                    <option value="TRX">Tron (TRX)</option>
+                    <option value="ETH">Ethereum (ETH)</option>
+                    <option value="USDT.ERC20">Tether (USDT.ERC20)</option>
+                    <option value="USDT.TRC20">Tether (USDT.TRC20)</option>
+                    <!-- Add more currencies as needed -->
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br/><br/>
+    <button type="submit">Filter Payments</button>
+</form>
+</body>
+</html>
